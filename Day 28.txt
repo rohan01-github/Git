@@ -1,0 +1,116 @@
+		--------------------Day 28 (Date-> 05-10-2023)-----------------------
+
+Why we need JSF ?
+
+*It is a Java framework for building UI and Web Apps. 
+*Simplifies development by providing a component-centric approach.
+*It ensures that apps are well designed and maintained by integrating the the well 
+	eshtablished Model-View-Controller(MVC).
+*Component contains Attributes, Methods and Event.
+
+Life Cyle of JSF : 
+*It includes 6 phases-
+	i. Restore view
+		a. Initial Request- User uses the page for first time.
+		b. Post Back- The page was already loaded.
+	ii. Apply request values
+		In UI all values which has been entered will identified.
+		->And these values to be binded in component bean.
+	iii. Process Validation
+		Controller Class where all validation will be performed.
+	iv. Update model values
+		After all model values updated the business layer comes in action.
+	v. Invoke App
+	vi. Render Response
+
+<f:view> -> facelet view : It identifies JSF controls
+
+		----------------------Day 29 (Date-> 06-10-2023)----------------------
+
+FacesContext : It contains all of the per-request state information related to the processing of a single JSF request,
+		and the rendering of corresponding response.
+
+		Creates difference objects for difference requests.
+		It is not submitting Business Logic.
+		Provide info regarding the particular request.
+		-> FacesContext.responseComplete(); 
+
+Extract Class : It can be implemented but not instantiated.
+
+Faces-Config.xml file : Contains nested managed-bean.
+			return "Menu.jsp?faces-redirect=true";
+
+Managed Bean : It is basically a user-defined class. which are dynamically instantiated at runtime if they are referenced as first element
+		of value binding expression.
+		If the object is not specified it will get nullified.
+		Interface does not have any state/scope which is why managed-beans are throws error.
+
+NOTE : Don't call DAO file directly - Controller->Validation->DAO
+
+Regular Expression (Regex) :
+	import.java.util.regex.Pattern;
+	Pattern.matches: Return boolean value.
+	Expression bracket
+
+*Servlets runs on webserver or application server but EJB only runs on application server.
+
+Q1.When destroy() is called ?
+
+-> At the end of servlet life cycle it will be called.
+
+Q2.How to get parameter names in servlet ?
+
+-> request.getParameter(parameter_name) or response.getParameter().
+
+Q3.How to get http session object values in servlet ?
+
+-> session.getAttribute(),session.setAttribute()
+
+Q4.How to set page type to html ?
+
+-> response.setContentType() 
+
+Q5.How to get server port ?
+
+-> request.get
+
+Q6.Which method used to bind the object to session ? 
+
+-> session.getAttribute(),session.setAttribute()
+
+Servlet & ServletContext: is a top level interface which contains all info about class.
+
+GenericServlet : 
+
+Q.How constructor invoked in servlet ?
+
+-> doGet(), init()
+
+actionListener : 
+
+
+// Java program to illustrate the
+// concept of Abstraction
+
+
+abstract class Bike{
+   Bike(){System.out.println("Hello");}
+   motor(){System.out.println("Hola");}
+   abstract void run();
+   
+ }
+
+ class Honda4 extends Bike{
+ void run(){System.out.println("running safely..");}
+
+ public static void main(String args[]){
+  Bike obj = new Honda4();
+  obj.run();
+
+ }
+ }
+
+Error : Honda4.java:3: error: invalid method declaration; return type required
+ motor(){System.out.println("Hola");}
+ ^
+1 error
